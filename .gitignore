@@ -2,3 +2,5 @@ presentation/.packages
 presentation/pubspec.lock
 shared/.packages
 shared/pubspec.lock
+
+shared/lib/src/services/imdb.dart
