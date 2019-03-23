@@ -1,6 +1,19 @@
 presentation/.packages
-presentation/pubspec.lock
-shared/.packages
-shared/pubspec.lock
+presentation/.idea
+presentation/.vscode
+presentation/ios/
+presentation/android/
+presentation/build/
+*.iml
+pubspec.lock
 
-shared/lib/src/services/imdb.dart
+Podfile
+Podfile.lock
+Pods/
+
+**/Flutter/Debug.xcconfig
+**/Flutter/Release.xcconfig
+**/Flutter/Runner.xcodeproj/
+**/Flutter/Runner.xcworkspace/
+
+presentation/lib/@services/imdb/imdb.dart
