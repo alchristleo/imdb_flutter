@@ -19,12 +19,7 @@ class MovieListState {
         );
     }
 
-    MovieListState copyWith({
-        LoadingStatus loadingStatus,
-        List<MovieList> movieLists,
-    }) {
-        print('STATE ML-1 ${movieLists}');
-        print('STATE ML-2 ${this.movieLists}');
+    MovieListState copyWith({ LoadingStatus loadingStatus, List<MovieList> movieLists }) {
         return MovieListState(
             loadingStatus: loadingStatus ?? this.loadingStatus,
             movieLists: movieLists ?? this.movieLists,
@@ -39,6 +34,5 @@ class MovieListState {
             loadingStatus == other.loadingStatus;
 
     @override
-    int get hashCode =>
-        loadingStatus.hashCode;
+    int get hashCode => loadingStatus.hashCode;
 }

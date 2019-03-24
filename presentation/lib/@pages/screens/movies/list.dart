@@ -28,8 +28,6 @@ class MovieListPageContent extends StatelessWidget {
 
     @override
     Widget build(BuildContext context) {
-        print(viewModel.movieLists);
-        print(viewModel.status);
         return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

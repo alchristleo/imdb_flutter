@@ -7,7 +7,6 @@ MovieListState movieListReducer(MovieListState state, dynamic action) {
         return state.copyWith(loadingStatus: LoadingStatus.loading);
     } else if (action is GetMovieListSuccessAction) {
         final newMovieLists = action.movieLists.toList();
-        print('REDUCER ${action}');
         return state.copyWith(
             loadingStatus: LoadingStatus.success,
             movieLists: newMovieLists,
