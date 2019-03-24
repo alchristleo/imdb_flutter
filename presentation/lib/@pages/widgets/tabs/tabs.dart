@@ -18,7 +18,7 @@ class MainBottomBar extends StatelessWidget {
         return CupertinoTabBar(
             backgroundColor: colorGrayscale10,
             inactiveColor: Colors.white54,
-            activeColor: Colors.white,
+            activeColor: colorWhite,
             iconSize: 24.0,
             currentIndex: currentIndex,
             onTap: onTap,
