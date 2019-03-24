@@ -5,7 +5,6 @@ import 'package:reselect/reselect.dart';
 final movieListsSelector = createSelector1<AppState, List<MovieList>, List<MovieList>>(
     (state) => state.movieListState.movieLists,
     (List<MovieList> movieLists) {
-        print('TES123 ${movieLists}');
         return movieLists;
     },
 );

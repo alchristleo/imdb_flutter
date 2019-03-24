@@ -11,7 +11,6 @@ class MovieListViewTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(movieLists);
     final content = Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 16.0,

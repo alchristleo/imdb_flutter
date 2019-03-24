@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:imdb_flutter/@global/colors.dart';
-import 'package:imdb_flutter/@pages/screens/movies/list.dart';
+import 'package:imdb_flutter/@pages/main_page.dart';
 
 class SplashScreen extends StatefulWidget {
     @override
@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
         super.initState();
         Timer(Duration(seconds: 3), () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const MovieListPage()),
+              MaterialPageRoute(builder: (context) => const MainPage()),
             ));
     }
 
@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         new Text(
                                 "IMDb",
                                 style: new TextStyle(
-                                    color: colorBlack,
+                                    color: colorGrayscale10,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 102
                                 ),
