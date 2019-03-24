@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:imdb_flutter/@global/colors.dart';
 import 'package:imdb_flutter/@pages/screens/movies/list.dart';
 import 'package:imdb_flutter/@pages/widgets/tabs/tabs.dart';
+import 'package:imdb_flutter/@pages/widgets/headers/header.dart';
 import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
 
@@ -94,10 +95,10 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
             fit: StackFit.expand,
             children: [
                 Scaffold(
-                    // appBar: PreferredSize(
-                    //     preferredSize: const Size.fromHeight(kToolbarHeight),
-                    //     child: InkinoAppBar(),
-                    // ),
+                    appBar: PreferredSize(
+                        preferredSize: const Size.fromHeight(kToolbarHeight),
+                        child: MainAppBar(),
+                    ),
                     body: Stack(
                         children: [
                         _buildTabContent(),

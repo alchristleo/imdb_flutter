@@ -11,9 +11,9 @@ Podfile
 Podfile.lock
 Pods/
 
-**/Flutter/Debug.xcconfig
-**/Flutter/Release.xcconfig
-**/Flutter/Runner.xcodeproj/
-**/Flutter/Runner.xcworkspace/
+presentation/ios/Flutter/Debug.xcconfig
+presentation/ios/Flutter/Release.xcconfig
+presentation/ios/Runner.xcodeproj/
+presentation/ios/Runner.xcworkspace/
 
 presentation/lib/@services/imdb/imdb.dart
