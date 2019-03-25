@@ -152,10 +152,10 @@ class LoadingViewState extends State<LoadingView>
 
     void _playAnimations() async {
         await _animationStack.first();
-        _animationStack.removeFirst();
+            _animationStack.removeFirst();
 
         if (_animationStack.isNotEmpty) {
-        _playAnimations();
+            _playAnimations();
         }
     }
 }
@@ -180,9 +180,9 @@ class _TransitionAnimation extends StatelessWidget {
             CurvedAnimation(
                 parent: controller,
                 curve: const Interval(
-                0.000,
-                0.650,
-                curve: Curves.ease,
+                    0.000,
+                    0.650,
+                    curve: Curves.ease,
                 ),
             ),
             );
