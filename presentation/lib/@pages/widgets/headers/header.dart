@@ -37,7 +37,7 @@ class _MainAppBarState extends State<MainAppBar> with SingleTickerProviderStateM
                         autofocus: false,
                         decoration: InputDecoration(
                             suffixIcon: new Icon(Icons.search, color: colorGrayscale10),
-                            hintText: "Search movies...",
+                            hintText: "Find movies..",
                             border: OutlineInputBorder(
                                 gapPadding: 0.0,
                                 borderSide: new BorderSide(color: colorGrayscale10),
@@ -47,7 +47,7 @@ class _MainAppBarState extends State<MainAppBar> with SingleTickerProviderStateM
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.all(Radius.circular(5.0)),
                                 borderSide: BorderSide(color: Colors.blue)),
-                            contentPadding: EdgeInsets.only(bottom: 20.0, left: 10.0, right: 10.0),
+                            contentPadding: EdgeInsets.only(bottom: 20.0, left: 10.0),
                         ),
                         style: TextStyle(color: colorGrayscale10, fontSize: 16.0,),
                         // onChanged: _updateSearchQuery,

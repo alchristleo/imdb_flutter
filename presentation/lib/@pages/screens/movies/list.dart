@@ -7,6 +7,7 @@ import 'package:imdb_flutter/@pages/widgets/loading/loading.dart';
 import 'package:imdb_flutter/@pages/widgets/loading/indicator.dart';
 import 'package:imdb_flutter/@pages/widgets/loading/error.dart';
 import 'package:imdb_flutter/@pages/widgets/movies/movie_list.dart';
+import 'package:imdb_flutter/@pages/widgets/placeholder/placeholder.dart';
 
 class MovieListPage extends StatelessWidget {
     const MovieListPage();
@@ -34,7 +35,7 @@ class MovieListPageContent extends StatelessWidget {
             Expanded(
                 child: LoadingView(
                     status: viewModel.status,
-                    loadingContent: const Indicator(),
+                    loadingContent: const MoviePlaceholder(),
                     errorContent: ErrorView(onRetry: viewModel.refreshMovieList),
                     successContent: MovieListView(viewModel.status, viewModel.movieLists),
                 ),
