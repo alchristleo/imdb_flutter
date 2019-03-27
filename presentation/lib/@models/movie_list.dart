@@ -4,10 +4,11 @@ class MovieList {
         this.title,
         this.posterPath,
         this.popularity,
-        this.voteAverage
+        this.voteAverage,
+        this.backdropPath
     });
 
-    final String id, title, posterPath, popularity, voteAverage;
+    final String id, title, posterPath, popularity, voteAverage, backdropPath;
 
     factory MovieList.fromJSON(Map<String, dynamic> json) {
         return new MovieList(
@@ -15,7 +16,8 @@ class MovieList {
             title: json['title'].toString(),
             posterPath: json['poster_path'].toString(),
             popularity: json['popularity'].toString(),
-            voteAverage: json['vote_average'].toString()
+            voteAverage: json['vote_average'].toString(),
+            backdropPath: json['backdrop_path'].toString()
         );
     }
 
@@ -27,7 +29,8 @@ class MovieList {
         title == other.title &&
         posterPath == other.posterPath &&
         popularity == other.popularity &&
-        voteAverage == other.voteAverage;
+        voteAverage == other.voteAverage &&
+        backdropPath == other.backdropPath;
 
     @override
     int get hashCode =>
@@ -35,5 +38,6 @@ class MovieList {
         title.hashCode ^
         posterPath.hashCode ^
         popularity.hashCode ^
-        voteAverage.hashCode;
+        voteAverage.hashCode ^
+        backdropPath.hashCode;
 }

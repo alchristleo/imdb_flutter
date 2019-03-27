@@ -11,3 +11,5 @@ Color colorBlackGradient95 = HexColor("#f1f1f1");
 Color colorBlackGradient92 = HexColor("#eeeeee");
 Color colorBlackGradient90 = HexColor("#e0e0e0");
 Color colorBlackGradient70 = HexColor("#b7b7b7");
+Color colorLightGrey = HexColor("#f2f2f2");
+Color colorDarkYellow = HexColor("#ffd300");
