@@ -41,11 +41,11 @@ class _MainAppBarState extends State<MainAppBar> with SingleTickerProviderStateM
                             border: OutlineInputBorder(
                                 gapPadding: 0.0,
                                 borderSide: new BorderSide(color: colorGrayscale10),
-                                borderRadius: BorderRadius.all(Radius.circular(2.0))
+                                borderRadius: BorderRadius.all(Radius.circular(15.0))
                             ),
                             hintStyle: TextStyle(color: colorGrayscale10),
                             focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                                borderRadius: BorderRadius.all(Radius.circular(15.0)),
                                 borderSide: BorderSide(color: Colors.blue)),
                             contentPadding: EdgeInsets.only(bottom: 20.0, left: 10.0),
                         ),
