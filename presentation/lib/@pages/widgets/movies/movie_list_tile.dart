@@ -74,7 +74,7 @@ class _DetailedInfo extends StatelessWidget {
                                 )
                             ),
                             new Padding(
-                                padding: const EdgeInsets.only(left: 15.0, top: 5.0, bottom: 5.0),
+                                padding: const EdgeInsets.only(left: 15.0, top: 5.0, bottom: 5.0, right: 15.0),
                                 child: new Row(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: <Widget>[
@@ -85,7 +85,18 @@ class _DetailedInfo extends StatelessWidget {
                                         ),
                                         new Text(
                                             movieLists.voteAverage,
-
+                                        ),
+                                        Spacer(),
+                                        new Padding(
+                                            padding: const EdgeInsets.only(right: 3.0),
+                                            child: Icon(
+                                                Icons.event_note,
+                                                size: 16.0,
+                                                color: colorBlack,
+                                            ),
+                                        ),
+                                        new Text(
+                                            movieLists.releaseDate,
                                         ),
                                     ],
                                 )
