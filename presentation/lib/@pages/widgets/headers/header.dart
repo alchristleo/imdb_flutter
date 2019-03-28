@@ -24,12 +24,17 @@ class _MainAppBarState extends State<MainAppBar> with SingleTickerProviderStateM
             centerTitle: false,
             leading: null,
             actions: <Widget>[
-                new Text("  IMDb  ",
+                new Padding(
+                    padding: EdgeInsets.only(left: 25.0, right: 20.0),
+                    child: new Text("IMDb",
                     style: TextStyle(
                         color: colorGrayscale10,
                         fontWeight: FontWeight.bold,
-                        fontSize: 34.0
+                        fontSize: 44.0,
+                        letterSpacing: 3.0,
+                        fontFamily: 'Kenyc'
                     ),
+                ),
                 ),
                 new Flexible(
                     child: TextField(
