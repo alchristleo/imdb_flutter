@@ -48,10 +48,11 @@ class _MovieListViewState extends State<MovieListView> {
         return Scrollbar(
             key: MovieListView.contentKey,
             child: GridView.builder(
+                physics: ScrollPhysics(),
                 padding: const EdgeInsets.all(5.0),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 1.15
+                    childAspectRatio: 1.15,
                 ),
                 itemCount: _movieLists.length,
                 itemBuilder: (BuildContext context, int index) {

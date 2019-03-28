@@ -30,12 +30,14 @@ class _SplashScreenState extends State<SplashScreen> {
                 Center(
                     child:
                         new Text(
-                                "IMDb",
-                                style: new TextStyle(
-                                    color: colorGrayscale10,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 102
-                                ),
+                            "IMDb",
+                            style: new TextStyle(
+                                color: colorGrayscale10,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 190,
+                                letterSpacing: 5.0,
+                                fontFamily: 'Kenyc'
+                            ),
                         ),
                 )
                 ],

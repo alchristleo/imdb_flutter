@@ -101,11 +101,11 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
                     ),
                     body: Stack(
                         children: [
-                        _buildTabContent(),
-                        _BottomTabs(
-                            selectedTab: _selectedTab,
-                            onTap: _tabSelected,
-                        ),
+                            _buildTabContent(),
+                            _BottomTabs(
+                                selectedTab: _selectedTab,
+                                onTap: _tabSelected,
+                            ),
                         ],
                     ),
                 )
@@ -127,29 +127,29 @@ class _BottomTabs extends StatelessWidget {
     Widget build(BuildContext context) {
         return new IPhoneXPadding(
             child: Align(
-            alignment: Alignment.bottomCenter,
-            child: MainBottomBar(
-                currentIndex: selectedTab,
-                onTap: onTap,
-                items: [
-                    BottomNavigationBarItem(
-                        title: Text("Trending", style: TextStyle(fontSize: 12)),
-                        icon: const Icon(Icons.movie),
-                        backgroundColor: colorWhite,
-                    ),
-                    BottomNavigationBarItem(
-                        title: Text("Top Rating", style: TextStyle(fontSize: 12)),
-                        icon: const Icon(Icons.trending_up),
-                        backgroundColor: colorWhite,
-                    ),
-                    BottomNavigationBarItem(
-                        title: Text("Incoming"),
-                        icon: const Icon(Icons.update),
-                        backgroundColor: colorWhite,
-                    ),
-                ],
+                alignment: Alignment.bottomCenter,
+                child: MainBottomBar(
+                    currentIndex: selectedTab,
+                    onTap: onTap,
+                    items: [
+                        BottomNavigationBarItem(
+                            title: Text("Trending", style: TextStyle(fontSize: 12)),
+                            icon: const Icon(Icons.movie),
+                            backgroundColor: colorWhite,
+                        ),
+                        BottomNavigationBarItem(
+                            title: Text("Top Rating", style: TextStyle(fontSize: 12)),
+                            icon: const Icon(Icons.trending_up),
+                            backgroundColor: colorWhite,
+                        ),
+                        BottomNavigationBarItem(
+                            title: Text("Incoming"),
+                            icon: const Icon(Icons.update),
+                            backgroundColor: colorWhite,
+                        ),
+                    ],
+                    )
                 )
-            )
         );
     }
 }

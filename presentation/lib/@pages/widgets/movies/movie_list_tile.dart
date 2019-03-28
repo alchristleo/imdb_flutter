@@ -58,19 +58,23 @@ class _DetailedInfo extends StatelessWidget {
                                 ),
                             ),
                             new Padding(
-                                padding: const EdgeInsets.only(left: 20.0, top: 10.0),
+                                padding: const EdgeInsets.only(left: 15.0, top: 10.0),
                                 child: new Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: <Widget>[
                                         new Text(
                                             movieLists.title,
                                             overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                                color: colorBlack,
+                                                fontWeight: FontWeight.w600
+                                            ),
                                         ),
                                     ],
                                 )
                             ),
                             new Padding(
-                                padding: const EdgeInsets.only(left: 20.0, top: 5.0, bottom: 5.0),
+                                padding: const EdgeInsets.only(left: 15.0, top: 5.0, bottom: 5.0),
                                 child: new Row(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: <Widget>[
