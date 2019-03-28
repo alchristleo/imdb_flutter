@@ -5,6 +5,7 @@ presentation/ios/
 presentation/android/
 presentation/build/
 *.iml
+.DS_Store
 pubspec.lock
 
 Podfile

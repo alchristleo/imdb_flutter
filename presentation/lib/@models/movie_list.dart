@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class MovieList {
     MovieList({
         this.id,
@@ -5,19 +7,24 @@ class MovieList {
         this.posterPath,
         this.popularity,
         this.voteAverage,
-        this.backdropPath
+        this.backdropPath,
+        this.releaseDate
     });
 
-    final String id, title, posterPath, popularity, voteAverage, backdropPath;
+    final String id, title, posterPath, popularity, voteAverage, backdropPath, releaseDate;
 
     factory MovieList.fromJSON(Map<String, dynamic> json) {
+        var dateParser = DateTime.parse(json['release_date']);
+        var dateFormatter = new DateFormat('yMMM');
+        String finalDate = (dateFormatter.format(dateParser)).toString();
         return new MovieList(
             id: json['id'].toString(),
             title: json['title'].toString(),
             posterPath: json['poster_path'].toString(),
             popularity: json['popularity'].toString(),
             voteAverage: json['vote_average'].toString(),
-            backdropPath: json['backdrop_path'].toString()
+            backdropPath: json['backdrop_path'].toString(),
+            releaseDate: finalDate.replaceAll(',', ''),
         );
     }
 
@@ -30,7 +37,8 @@ class MovieList {
         posterPath == other.posterPath &&
         popularity == other.popularity &&
         voteAverage == other.voteAverage &&
-        backdropPath == other.backdropPath;
+        backdropPath == other.backdropPath &&
+        releaseDate == other.releaseDate;
 
     @override
     int get hashCode =>
@@ -39,5 +47,6 @@ class MovieList {
         posterPath.hashCode ^
         popularity.hashCode ^
         voteAverage.hashCode ^
-        backdropPath.hashCode;
+        backdropPath.hashCode ^
+        releaseDate.hashCode;
 }
