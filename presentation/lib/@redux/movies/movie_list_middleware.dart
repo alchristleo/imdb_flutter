@@ -16,6 +16,11 @@ class MovieListMiddleware extends MiddlewareClass<AppState> {
         Store<AppState> store, dynamic action, NextDispatcher next) async {
         next(action);
 
+        if (action is CompletableAction) {
+            await _updateMovieList(store, action, next);
+            action.completer.complete();
+        }
+
         if (action is RefreshMovieListAction) {
             await _updateMovieList(store, action, next);
         }
