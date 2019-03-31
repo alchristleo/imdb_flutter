@@ -1,11 +1,12 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:imdb_flutter/@global/colors.dart';
-import 'package:imdb_flutter/@pages/screens/movies/list.dart';
-import 'package:imdb_flutter/@pages/widgets/tabs/tabs.dart';
-import 'package:imdb_flutter/@pages/widgets/headers/header.dart';
 import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
+import 'package:imdb_flutter/@global/colors.dart';
+import 'package:imdb_flutter/@pages/screens/movies/list.dart';
+import 'package:imdb_flutter/@pages/widgets/placeholder/placeholder.dart';
+import 'package:imdb_flutter/@pages/widgets/tabs/tabs.dart';
+import 'package:imdb_flutter/@pages/widgets/headers/header.dart';
 
 // include additional bottom padding to avoid placing BottomNavigationBarItems under the indicator for accessing the Home screen
 class IPhoneXPadding extends Container {
@@ -75,8 +76,8 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
                     const MovieListPage(),
-                    const MovieListPage(),
-                    const MovieListPage(),
+                    const MoviePlaceholder(),
+                    const MoviePlaceholder(),
                 ],
             ),
         );

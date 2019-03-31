@@ -1,11 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:imdb_flutter/@redux/index.dart';
 import 'package:imdb_flutter/@viewmodels/movie_list_view_model.dart';
 import 'package:imdb_flutter/@pages/widgets/loading/loading.dart';
-import 'package:imdb_flutter/@pages/widgets/loading/indicator.dart';
-import 'package:imdb_flutter/@pages/widgets/loading/error.dart';
 import 'package:imdb_flutter/@pages/widgets/movies/movie_list.dart';
 import 'package:imdb_flutter/@pages/widgets/placeholder/placeholder.dart';
 
@@ -29,18 +26,21 @@ class MovieListPageContent extends StatelessWidget {
 
     @override
     Widget build(BuildContext context) {
-        return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-            Expanded(
-                child: LoadingView(
-                    status: viewModel.status,
-                    loadingContent: const MoviePlaceholder(),
-                    errorContent: ErrorView(onRetry: viewModel.refreshMovieList),
-                    successContent: MovieListView(viewModel.status, viewModel.movieLists),
-                ),
+        return Container(
+            margin: const EdgeInsets.only(bottom: 80.0),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                    Expanded(
+                        child: LoadingView(
+                            status: viewModel.status,
+                            loadingContent: const MoviePlaceholder(),
+                            errorContent: const MoviePlaceholder(),
+                            successContent: MovieListView(viewModel.status, viewModel.movieLists),
+                        ),
+                    ),
+                ],
             ),
-        ],
         );
     }
 }
