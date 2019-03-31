@@ -1,15 +1,10 @@
 # imdb_flutter
 
-A new Flutter project.
+A Flutter application looks alike IMDb app and using redux to fetch data.
+
+<img height="480px" src="https://github.com/alchristleo/imdb_flutter/blob/master/presentation/assets/demo.gif">
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
 
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.io/docs), which offers tutorials, 
