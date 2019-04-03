@@ -11,10 +11,9 @@ A Flutter application looks alike IMDb app and using redux to fetch data.
     Clone this repository
     ```
     git clone git@github.com:alchristleo/imdb_flutter.git
-
-    Open the project in your favorite IDE, in this case I'm using VSCode, install Dart plugin, then cmd + shift + p, type Pub: Get Packages.
-
-    Navigate to presentation/lib/@services/imdb/imdb.dart.sample rename it to imdb.dart and change the apiKey "<YOUR_IMDB_API_KEY>" to your own api key. To get your api key please register first in here [TMDB API Docs](https://developers.themoviedb.org/3/getting-started/introduction)
+    ```
+3. Open the project in your favorite IDE, in this case I'm using VSCode, install Dart plugin, then cmd + shift + p, type Pub: Get Packages.
+4. Navigate to presentation/lib/@services/imdb/imdb.dart.sample rename it to imdb.dart and change the apiKey "<YOUR_IMDB_API_KEY>" to your own api key. To get your api key please register first in here [TMDB API Docs](https://developers.themoviedb.org/3/getting-started/introduction)
 
     To run the application you can press F5.
 
