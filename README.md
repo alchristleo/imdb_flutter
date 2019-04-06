@@ -16,6 +16,11 @@ A Flutter application looks alike IMDb app and using redux to fetch data.
     cmd + shift + p, type Pub: Get Packages.
 4. cmd + shift + p, type Flutter: Run Flutter Doctor, this command will help you to check if your flutter application can run on both android and ios platform.
 5. Navigate to presentation/lib/@services/imdb/imdb.dart.sample rename it to imdb.dart and change the apiKey "<YOUR_IMDB_API_KEY>" to your own api key. To get your api key please register first in here [TMDB API Docs](https://developers.themoviedb.org/3/getting-started/introduction)
+6. Run: 
+    ```
+    flutter packages pub run flutter_launcher_icons:main
+    ```
+   This command will change the app icons on start, see [flutter_launcher_icons](https://pub.dartlang.org/packages/flutter_launcher_icons)
 
 NB: If you want to run this app on ios, navigate to presentation/ios then in terminal type: 
     ```
