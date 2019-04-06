@@ -12,10 +12,18 @@ A Flutter application looks alike IMDb app and using redux to fetch data.
     ```
     git clone git@github.com:alchristleo/imdb_flutter.git
     ```
-3. Open the project in your favorite IDE, in this case I'm using VSCode, install Dart plugin, then cmd + shift + p, type Pub: Get Packages.
-4. Navigate to presentation/lib/@services/imdb/imdb.dart.sample rename it to imdb.dart and change the apiKey "<YOUR_IMDB_API_KEY>" to your own api key. To get your api key please register first in here [TMDB API Docs](https://developers.themoviedb.org/3/getting-started/introduction)
+3. Open the project in your favorite IDE, in this case I'm using [VSCode](https://code.visualstudio.com/), install Dart plugin, then 
+    cmd + shift + p, type Pub: Get Packages.
+4. cmd + shift + p, type Flutter: Run Flutter Doctor, this command will help you to check if your flutter application can run on both android and ios platform.
+5. Navigate to presentation/lib/@services/imdb/imdb.dart.sample rename it to imdb.dart and change the apiKey "<YOUR_IMDB_API_KEY>" to your own api key. To get your api key please register first in here [TMDB API Docs](https://developers.themoviedb.org/3/getting-started/introduction)
 
-    To run the application you can press F5.
+NB: If you want to run this app on ios, navigate to presentation/ios then in terminal type: 
+    ```
+    pod install
+    ```
+This command will help you generate pods file to bundle the library to xcode emulator. See [cocoapods](https://cocoapods.org/)
+
+To run the application you can press F5.
 
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.io/docs), which offers tutorials, 
