@@ -21,14 +21,21 @@ A Flutter application looks alike IMDb app and using redux to fetch data.
     flutter packages pub run flutter_launcher_icons:main
     ```
    This command will change the app icons on start, see [flutter_launcher_icons](https://pub.dartlang.org/packages/flutter_launcher_icons)
+7. Voila, now you can start the application, first navigate inside presentation folder:
+    ```
+    cd presentation
+    ```
+   To run the application you can press F5.
 
-NB: If you want to run this app on ios, navigate to presentation/ios then in terminal type: 
+8. If you want to run this app on iOS, navigate to 
+    ```
+    presentation/ios
+    ```
+    then in terminal type: 
     ```
     pod install
     ```
 This command will help you generate pods file to bundle the library to xcode emulator. See [cocoapods](https://cocoapods.org/)
-
-To run the application you can press F5.
 
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.io/docs), which offers tutorials, 
