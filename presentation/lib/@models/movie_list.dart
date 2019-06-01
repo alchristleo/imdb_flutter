@@ -23,7 +23,7 @@ class MovieList {
             posterPath: json['poster_path'].toString(),
             popularity: json['popularity'].toString(),
             voteAverage: json['vote_average'].toString(),
-            backdropPath: json['backdrop_path'].toString(),
+            backdropPath: json['backdrop_path'].toString() ?? null,
             releaseDate: finalDate.replaceAll(',', ''),
         );
     }
