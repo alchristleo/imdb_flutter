@@ -32,6 +32,7 @@ class _DetailedInfo extends StatelessWidget {
 
     @override
     Widget build(BuildContext context) {
+        final isImageBroken = movieLists.backdropPath != "null" ? movieLists.backdropPath : movieLists.posterPath;
         return Expanded(
             child: Container(
                 margin: const EdgeInsets.all(2.0),
@@ -52,7 +53,7 @@ class _DetailedInfo extends StatelessWidget {
                                         topRight: const Radius.circular(10.0)
                                     ),
                                     child: Image.network(
-                                        Uri.https("image.tmdb.org", "/t/p/w500${movieLists.backdropPath}").toString(),
+                                        Uri.https("image.tmdb.org", "/t/p/w500$isImageBroken").toString(),
                                         fit: BoxFit.cover,
                                     )
                                 ),
