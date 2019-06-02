@@ -2,11 +2,13 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
+import 'package:circular_bottom_navigation/circular_bottom_navigation.dart';
+import 'package:circular_bottom_navigation/tab_item.dart';
 import 'package:imdb_flutter/@global/colors.dart';
 import 'package:imdb_flutter/@pages/screens/movies/list.dart';
 import 'package:imdb_flutter/@pages/widgets/placeholder/placeholder.dart';
-import 'package:imdb_flutter/@pages/widgets/tabs/tabs.dart';
 import 'package:imdb_flutter/@pages/widgets/headers/header.dart';
+// import 'package:imdb_flutter/@pages/widgets/tabs/tabs.dart';
 
 // include additional bottom padding to avoid placing BottomNavigationBarItems under the indicator for accessing the Home screen
 class IPhoneXPadding extends Container {
@@ -54,40 +56,82 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin {
-    TabController _tabController;
     int _selectedTab = 0;
+    double barHeightSize = 80;
+    double circleSize = 62;
+
+    List<TabItem> tabItems = List.of([
+        new TabItem(Icons.movie, "Trending", colorMinionYellow),
+        new TabItem(Icons.trending_up, "Top Rating", colorMinionYellow),
+        new TabItem(Icons.update, "Incoming", colorMinionYellow),
+    ]);
+
+    List tabContentItems = List.of([
+        const MovieListPage(),
+        const MoviePlaceholder(),
+        const MoviePlaceholder(),
+    ]);
+
+    CircularBottomNavigationController _navigationController;
 
     @override
     void initState() {
         super.initState();
-        _tabController = TabController(length: 3, vsync: this);
+        _navigationController = new CircularBottomNavigationController(_selectedTab);
     }
 
     @override
     void dispose() {
         super.dispose();
-        _tabController.dispose();
+        _navigationController.dispose();
+    }
+
+    // change navigation controller value
+    void onTabSelected() {
+        if (_navigationController.value == tabItems.length - 1) {
+            _navigationController.value = 0;
+        } else {
+            _navigationController.value++;
+        }
+    }
+
+    // set selected tab position
+    dynamic setSelectedTabPos(int selectedPos) {
+        setState(() {
+            this._selectedTab = selectedPos;
+        });
     }
 
     Widget _buildTabContent() {
         return Positioned.fill(
-            child: TabBarView(
-                controller: _tabController,
-                physics: const NeverScrollableScrollPhysics(),
-                children: [
-                    const MovieListPage(),
-                    const MoviePlaceholder(),
-                    const MoviePlaceholder(),
-                ],
+            child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                child: tabContentItems[_navigationController.value],
             ),
         );
     }
 
-    void _tabSelected(int newIndex) {
-        setState(() {
-            _selectedTab = newIndex;
-            _tabController.index = newIndex;
-        });
+    Widget _buildBottomNav() {
+        return new IPhoneXPadding(
+            child: GestureDetector(
+                child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: CircularBottomNavigation(
+                        tabItems,
+                        barHeight: barHeightSize,
+                        circleSize: circleSize,
+                        controller: _navigationController,
+                        barBackgroundColor: colorGrayscale10,
+                        selectedIconColor: colorGrayscale10,
+                        normalIconColor: Colors.white54,
+                        animationDuration: Duration(milliseconds: 100),
+                        selectedCallback: setSelectedTabPos,
+                    )
+                ),
+                onTap: onTabSelected,
+            )
+        );
     }
 
     @override
@@ -103,54 +147,11 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
                     body: Stack(
                         children: [
                             _buildTabContent(),
-                            _BottomTabs(
-                                selectedTab: _selectedTab,
-                                onTap: _tabSelected,
-                            ),
+                            _buildBottomNav()
                         ],
                     ),
                 )
             ],
-        );
-    }
-}
-
-class _BottomTabs extends StatelessWidget {
-    _BottomTabs({
-        @required this.selectedTab,
-        @required this.onTap,
-    });
-
-    final int selectedTab;
-    final ValueChanged<int> onTap;
-
-    @override
-    Widget build(BuildContext context) {
-        return new IPhoneXPadding(
-            child: Align(
-                alignment: Alignment.bottomCenter,
-                child: MainBottomBar(
-                    currentIndex: selectedTab,
-                    onTap: onTap,
-                    items: [
-                        BottomNavigationBarItem(
-                            title: Text("Trending", style: TextStyle(fontSize: 12)),
-                            icon: const Icon(Icons.movie),
-                            backgroundColor: colorWhite,
-                        ),
-                        BottomNavigationBarItem(
-                            title: Text("Top Rating", style: TextStyle(fontSize: 12)),
-                            icon: const Icon(Icons.trending_up),
-                            backgroundColor: colorWhite,
-                        ),
-                        BottomNavigationBarItem(
-                            title: Text("Incoming"),
-                            icon: const Icon(Icons.update),
-                            backgroundColor: colorWhite,
-                        ),
-                    ],
-                    )
-                )
         );
     }
 }
