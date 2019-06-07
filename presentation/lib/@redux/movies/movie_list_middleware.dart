@@ -4,12 +4,12 @@ import 'package:imdb_flutter/@models/loading.dart';
 import 'package:imdb_flutter/@models/movie_list.dart';
 import 'package:imdb_flutter/@redux/movies/movie_list_actions.dart';
 import 'package:imdb_flutter/@redux/app/app_state.dart';
-import 'package:imdb_flutter/@services/imdb/handler/api_handler.dart';
+import 'package:imdb_flutter/@services/imdb/handler/movie_list_handler.dart';
 
 class MovieListMiddleware extends MiddlewareClass<AppState> {
     MovieListMiddleware(this.api);
 
-    final APIHandler api;
+    final MovieListHandler api;
 
     @override
     Future<Null> call(
