@@ -2,14 +2,13 @@ import 'dart:async';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 
 import 'package:imdb_flutter/@redux/index.dart';
 import 'package:imdb_flutter/@global/colors.dart';
 import 'package:imdb_flutter/@pages/screens/splash_screen.dart';
 
 Future<void> main() async {
-    final store = createStore(Client());
+    final store = createStore();
 
     runApp(IMDbApp(store));
 }
